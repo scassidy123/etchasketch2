@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-sketch</title>
     <link rel="stylesheet" href="styles.css">
-    
+    <script src="js.js" defer></script>
 </head>
 <body>
     <div class="header-container">
@@ -15,18 +15,19 @@
         <div class="controls-container">
             <h2>Controls</h2>
             <div class="buttonHolder">
-                <button class="button-17" role="button">64 x 64</button>
-                <button class="button-17" role="button">100 x 100</button>
+                <button id="64" class="button-17" role="button">20 x 20</button>
+                <button id="100" class="button-17" role="button">40 x 40</button>
             </div>
             <div class="resetHolder">
-                <button class="button-17">Reset Canvas</button>
+                <button id="reset" class="button-17">Reset Canvas</button>
             </div>
         </div>
         <div class="canvas-container">
             <h3>Canvas</h3>
+            <!--The div below this contains the generated squares -->
             <div class="screen">
-                
             </div>
+            <!--The div above this contains the generated squares-->
         </div>
     </div>
 </body>

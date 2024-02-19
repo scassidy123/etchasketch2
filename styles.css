@@ -1,6 +1,12 @@
 /* // <uniquifier>: Use a uniquifier for the class name
 // <weight>: Use a value from 200 to 800 */
 
+.screen {
+  width: 500px;
+  height: 500px;
+  display: grid;
+}
+
 .plus-jakarta sans-<uniquifier> {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
@@ -107,6 +113,8 @@ h3 {
 .button-17:hover {
   background: #F6F9FE;
   color: #174ea6;
+  translate: 0px -5px;
+
 }
 
 .button-17:active {
