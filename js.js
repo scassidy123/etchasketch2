@@ -3,7 +3,7 @@
 let sixtyFour = document.getElementById("64");
 let oneHundred = document.getElementById("100");
 let resetButton = document.getElementById("reset");
-let lastCanvasSize;
+let lastCanvasSize = 20;
 
 //add event listeners to my 3 buttons
 sixtyFour.addEventListener("click",  () => lastCanvasSize = 20)
