@@ -14,35 +14,37 @@ oneHundred.addEventListener("click", () => populateScreen(lastCanvasSize));
 
 resetButton.addEventListener("click", () => populateScreen(lastCanvasSize));
 
+
 //start a new canvas
-function populateScreen (num) {
+function populateScreen(num) {
     console.log(lastCanvasSize);
     console.log(num);
     let screen = document.querySelector(".screen");
     screen.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
     screen.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+
+    // Remove existing squares
     let generated = document.querySelectorAll(".generated");
-    
     generated.forEach(element => {
         element.remove();
     });
 
-
+    // Create new squares and add event listeners
     for (let i = 0; i < num * num; i++) {
         let square = document.createElement("div");
-        square.style.backgroundColor = 'white';
-        square.style.border = "1px solid black"
-        square.style.borderColor = "rgba(0,0,0,0.025)"
-        square.setAttribute("class", "generated");
-        screen.insertAdjacentElement("beforeend", square);
+        // square.style.background = 'white';
+        square.style.border = "1px solid black";
+        square.style.borderColor = "rgba(0,0,0,0.025)";
+        square.classList.add("generated");
+        screen.appendChild(square);
     }
+
+    // Add event listeners to new squares
+    document.querySelectorAll(".generated").forEach(element => {
+        element.addEventListener("mouseover", function() {
+            this.classList.add("new-color");
+        });
+    });
 }
 
 populateScreen(lastCanvasSize)
-
-function testFunction() {
-    console.log("button heard");
-}
-function resetFunction() {
-    console.log("Reset button is heard");
-}
